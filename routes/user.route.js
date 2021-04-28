@@ -1,11 +1,9 @@
 import express from 'express'
-import { login, create } from '../controllers/users.controller.js'
+import { create } from '../controllers/users.controller.js'
 
 let userRoute = express.Router()
 
 userRoute.post("/", create)
-
-userRoute.post("/login", login)
 
 userRoute.get('/', async (req, res) => {
     const token = req.body.token
